@@ -9,14 +9,18 @@ module.exports = function plugin (options) {
             rule.selectors.forEach(function (selector) {
                 if (checkSelector(selector)) {
                     tmpSelectors.forEach(function (tmp) {
-                        if (tmp === selector) throw Error('NoCSS: cannot overwrite any rule sets')
+                        if (tmp === selector) throw new Error('NoCSS: cannot overwrite any rule sets')
                         else tmpSelectors.push(selector)
                     })
                 }
                 else {
-                    throw Error('NoCSS: can use only class selectors and cannot nest selectors')
+                    throw new Error('NoCSS: can use only class selectors and cannot nest selectors')
                 }
             })
+        })
+
+        root.eachDecl(function (decl) {
+            if (decl.important)  throw new Error('NoCSS: using `!important`')
         })
 
         return root
