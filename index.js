@@ -9,12 +9,8 @@ module.exports = function plugin (options) {
             rule.selectors.forEach(function (selector) {
                 if (checkSelector(selector)) {
                     tmpSelectors.forEach(function (tmp) {
-                        if (tmp === selector) {
-                            throw Error('NoCSS: cannot overwrite any rule sets')
-                        }
-                        else {
-                            tmpSelectors.push(selector)
-                        }
+                        if (tmp === selector) throw Error('NoCSS: cannot overwrite any rule sets')
+                        else tmpSelectors.push(selector)
                     })
                 }
                 else {

@@ -7,6 +7,7 @@ var css = fs.readFileSync('fixtures.css', 'utf-8').trim()
 
 test('test-1', function (t) {
     var actual = postcss().use(nocssLint()).process(css).css.trim()
-    t.same(actual)
+    var expected = '.class:hover {\n    font-size: 12px;\n}'
+    t.same(actual, expected)
     t.end()
 })
