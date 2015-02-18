@@ -14,7 +14,8 @@
     "css",
     "lint",
     "cascade",
-    "cascading"
+    "cascading",
+    "postcssplugin"
   ],
   "author": "Masaaki Morishita",
   "license": "MIT",

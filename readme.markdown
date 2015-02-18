@@ -1,6 +1,6 @@
 # nocss-lint [![Build Status](https://travis-ci.org/morishitter/nocss-lint.svg)](https://travis-ci.org/morishitter/nocss-lint)
 
-'No Cascading' CSS lint tool
+'No Cascading' CSS lint tool implemented as PostCSS plugins.
 
 ## Install
 
