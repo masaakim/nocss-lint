@@ -1,0 +1,18 @@
+{
+  "name": "nocss-lint",
+  "version": "0.0.1",
+  "description": "'No Cascading' CSS lint tool",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/morishitter/nocss-lint/git"
+  },
+  "keywords": ["css","lint","cascade","cascading"],
+  "author": "Masaaki Morishita",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
