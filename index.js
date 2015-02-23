@@ -1,10 +1,17 @@
 var postcss = require('postcss')
+var inspect = require('obj-inspector')
 
 module.exports = function plugin (options) {
     options = options = {}
 
     return function (root) {
-        var tmpSelectors = []
+        inspect(root)
+        var tmpSelectors = ['']
+
+        root.eachDecl(function (decl) {
+            if (decl.important)  throw new Error('NoCSS: using `!important`')
+        })
+
         root.eachRule(function (rule) {
             rule.selectors.forEach(function (selector) {
                 if (checkSelector(selector)) {
@@ -17,10 +24,6 @@ module.exports = function plugin (options) {
                     throw new Error('NoCSS: can use only class selectors and cannot nest selectors')
                 }
             })
-        })
-
-        root.eachDecl(function (decl) {
-            if (decl.important)  throw new Error('NoCSS: using `!important`')
         })
 
         return root
