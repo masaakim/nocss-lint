@@ -1,11 +1,9 @@
 var postcss = require('postcss')
-var inspect = require('obj-inspector')
 
 module.exports = function plugin (options) {
     options = options = {}
 
     return function (root) {
-        inspect(root)
         var tmpSelectors = ['']
 
         root.eachDecl(function (decl) {
